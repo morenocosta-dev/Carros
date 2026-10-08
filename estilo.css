@@ -481,3 +481,322 @@ button{
 }
 
 }
+
+/* =========================================================
+   AUTOMAX — RESPONSIVIDADE
+   Tablet: até 1024px
+   Telefone: até 700px
+   ========================================================= */
+
+.menu-toggle {
+    display: none;
+    width: 44px;
+    height: 44px;
+    padding: 8px;
+    margin: 0;
+    background: transparent;
+    border: 0;
+    cursor: pointer;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 5px;
+    z-index: 1002;
+}
+
+.menu-toggle span {
+    display: block;
+    width: 28px;
+    height: 3px;
+    background: #fff;
+    border-radius: 3px;
+    transition: .3s ease;
+}
+
+.menu-toggle.ativo span:nth-child(1) {
+    transform: translateY(8px) rotate(45deg);
+}
+
+.menu-toggle.ativo span:nth-child(2) {
+    opacity: 0;
+}
+
+.menu-toggle.ativo span:nth-child(3) {
+    transform: translateY(-8px) rotate(-45deg);
+}
+
+/* ===================== TABLET ===================== */
+@media (max-width: 1024px) {
+
+    header {
+        height: 70px;
+    }
+
+    .navbar {
+        padding: 0 25px;
+        justify-content: space-between;
+    }
+
+    .logo h1 {
+        margin-left: 0;
+        font-size: 30px;
+    }
+
+    .logo h1 small {
+        font-size: 28px;
+    }
+
+    .menu {
+        flex: 1;
+        padding: 10px;
+    }
+
+    .menu a {
+        font-size: 16px;
+        padding: 14px 9px;
+    }
+
+    #botao {
+        margin-left: 8px;
+        margin-right: 0;
+        padding: 9px 15px;
+    }
+
+    .hero {
+        height: 700px;
+    }
+
+    .hero h1,
+    .hero p,
+    .hero .btn {
+        margin-left: 60px;
+    }
+
+    .hero h1 {
+        font-size: 46px;
+    }
+
+    .cars {
+        width: calc(100% - 40px);
+        margin-left: 20px;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 22px;
+    }
+
+    .benefits {
+        height: auto;
+        padding: 50px 0;
+    }
+
+    .benefit-grid {
+        width: calc(100% - 40px);
+        margin-left: 20px;
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .form-container {
+        width: calc(100% - 40px);
+        margin-left: 20px;
+        margin-right: 20px;
+    }
+}
+
+/* ===================== TELEFONE ===================== */
+@media (max-width: 700px) {
+
+    header {
+        height: 65px;
+    }
+
+    .navbar {
+        padding: 0 15px;
+    }
+
+    .logo h1 {
+        margin-left: 0;
+        font-size: 25px;
+    }
+
+    .logo h1 small {
+        font-size: 23px;
+    }
+
+    /* Mostra as 3 barras */
+    .menu-toggle {
+        display: flex;
+    }
+
+    /* Menu escondido até clicar nas 3 barras */
+    .menu {
+        position: absolute;
+        top: 65px;
+        left: 0;
+        width: 100%;
+        display: none;
+        flex-direction: column;
+        align-items: stretch;
+        padding: 10px 15px 20px;
+        background: rgba(0, 0, 0, .97);
+        border-bottom: 2px solid #e63946;
+        z-index: 1001;
+    }
+
+    .menu.ativo {
+        display: flex;
+    }
+
+    .menu a,
+    #botao {
+        display: block;
+        width: 100%;
+        margin: 0;
+        padding: 15px;
+        text-align: center;
+        font-size: 17px;
+        border-radius: 5px;
+    }
+
+    .menu a:hover {
+        border-top: 0;
+        background: rgba(230, 57, 70, .12);
+    }
+
+    #botao {
+        margin-top: 5px;
+    }
+
+    /* Hero */
+    .hero {
+        min-height: 650px;
+        height: auto;
+        padding: 110px 20px 70px;
+    }
+
+    .hero-content {
+        width: 100%;
+    }
+
+    .hero h1,
+    .hero p,
+    .hero .btn {
+        margin-left: 0;
+    }
+
+    .hero h1 {
+        font-size: 38px;
+        line-height: 1.15;
+    }
+
+    .hero p {
+        font-size: 17px;
+        line-height: 1.5;
+    }
+
+    /* Carros: uma coluna */
+    .cars {
+        width: calc(100% - 30px);
+        margin-left: 15px;
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+
+    .car-card {
+        width: 100%;
+    }
+
+    .car-image {
+        height: 220px;
+    }
+
+    .car-info {
+        padding: 20px;
+    }
+
+    /* Vantagens: uma coluna */
+    .benefits {
+        height: auto;
+        padding: 45px 0;
+    }
+
+    .benefit-grid {
+        width: calc(100% - 30px);
+        margin-left: 15px;
+        grid-template-columns: 1fr;
+        gap: 18px;
+    }
+
+    /* Formulário */
+    .form-container {
+        width: calc(100% - 30px);
+        margin: 90px 15px 30px;
+        padding: 22px 16px;
+        border-radius: 15px;
+    }
+
+    .form-grid {
+        grid-template-columns: 1fr;
+        gap: 18px;
+    }
+
+    .full {
+        grid-column: auto;
+    }
+
+    .title {
+        gap: 10px;
+        margin-bottom: 22px;
+    }
+
+    .title h2 {
+        font-size: 21px;
+    }
+
+    input,
+    select,
+    textarea {
+        width: 100%;
+        padding: 14px;
+    }
+
+    /* Rodapé */
+    .footer {
+        padding: 40px 7% 20px;
+    }
+
+    .footer-container {
+        flex-direction: column;
+        gap: 25px;
+    }
+
+    .footer-col {
+        width: 100%;
+    }
+
+    .copyright {
+        margin-top: 25px;
+    }
+}
+
+/* ================= TELEFONES PEQUENOS ================= */
+@media (max-width: 380px) {
+
+    .hero h1 {
+        font-size: 32px;
+    }
+
+    .hero p {
+        font-size: 16px;
+    }
+
+    section .titulo h2 {
+        font-size: 27px;
+    }
+
+    .car-image {
+        height: 200px;
+    }
+
+    .form-container {
+        padding: 18px 12px;
+    }
+}
